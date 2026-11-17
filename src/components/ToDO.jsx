@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ToDo.module.css";
 import trashIcon from ".././assets/icons/trash.svg";
 
 export const ToDo = () => {
@@ -13,17 +14,18 @@ export const ToDo = () => {
 
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <h1>To Do App</h1>
         <div>
           <input type="text" value={toDo} onChange={handleInput} />
           <button onClick={handleAddTasks}>Add Task</button>
         </div>
+
         <ul>
           {tasks.map((task, i) => (
             <li key={i}>
               {task}
-              <img src={trashIcon} alt="delete icon" />
+              <img src={trashIcon} alt="delete icon" className={styles.icon} />
             </li>
           ))}
         </ul>
