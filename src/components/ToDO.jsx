@@ -26,14 +26,16 @@ export const ToDo = () => {
     <>
       <div className={styles.container}>
         <h1>To Do List</h1>
-        <div>
+        <div className={styles.inputBtnContainer}>
           <input
             type="text"
             value={toDo}
             onChange={handleToDo}
             placeholder="Enter To Do..."
           />
-          <button onClick={handleAddTasks}>Add Task</button>
+          <button className={styles.addBtn} onClick={handleAddTasks}>
+            Add Task
+          </button>
         </div>
 
         <ul>

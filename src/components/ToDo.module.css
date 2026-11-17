@@ -9,28 +9,59 @@ body {
 
 .container {
   background-color: aliceblue;
-  width: 600px;
-  height: 600px;
+  min-width: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   padding-top: 30px;
+  border-radius: 10px;
+}
+
+.inputBtnContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin-left: 40px;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  border: 2px solid hsla(0, 0%, 50%, 0.265);
+  border-radius: 10px;
+  color: hsla(0, 0%, 0%, 0.563);
+}
+
+.addBtn {
+  padding: 6px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  background-color: hsla(0, 0%, 50%, 0.326);
 }
 
 ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 50px;
 }
 
 li {
-  width: 300px;
+  min-width: 430px;
   display: flex;
   justify-content: space-between;
   background-color: hsla(0, 0%, 50%, 0.09);
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px solid black;
+  font-size: 1.5rem;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
 }
 
 .icon {
