@@ -12,14 +12,19 @@ export const ToDo = () => {
 
   const handleAddTasks = () => {
     if (toDo.trim() !== "") {
-      setTasks((prev) => [...prev, toDo]);
+      setTasks((prev) => [...prev, toDo.trim()]);
     }
     setToDo("");
   };
 
   const handleDeleteTasks = (i) => {
-    const deleteToDo = tasks.filter((_, index) => index !== i);
-    setTasks(deleteToDo);
+    setTasks((prev) => prev.filter((_, index) => index !== i));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAddTasks();
+    }
   };
 
   return (
@@ -31,6 +36,7 @@ export const ToDo = () => {
             type="text"
             value={toDo}
             onChange={handleToDo}
+            onKeyDown={handleKeyDown}
             placeholder="Enter To Do..."
           />
           <button className={styles.addBtn} onClick={handleAddTasks}>
