@@ -1,31 +1,16 @@
-import { useState } from "react";
 import styles from "./ToDo.module.css";
 import trashIcon from ".././assets/icons/trash.svg";
+import { useToDo } from "../hooks/useToDo";
 
 export const ToDo = () => {
-  const [tasks, setTasks] = useState([]);
-  const [toDo, setToDo] = useState("");
-
-  const handleToDo = (e) => {
-    setToDo(e.target.value);
-  };
-
-  const handleAddTasks = () => {
-    if (toDo.trim() !== "") {
-      setTasks((prev) => [...prev, toDo.trim()]);
-    }
-    setToDo("");
-  };
-
-  const handleDeleteTasks = (i) => {
-    setTasks((prev) => prev.filter((_, index) => index !== i));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleAddTasks();
-    }
-  };
+  const {
+    tasks,
+    toDo,
+    handleToDo,
+    handleAddTasks,
+    handleDeleteTasks,
+    handleKeyDown,
+  } = useToDo();
 
   return (
     <>
